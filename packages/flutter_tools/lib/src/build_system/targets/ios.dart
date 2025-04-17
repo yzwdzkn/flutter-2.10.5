@@ -599,7 +599,7 @@ Future<void> _createStubAppFramework(File outputFile, Environment environment,
       for (String arch in iosArchNames ?? <String>{}) ...<String>['-arch', arch],
       stubSource.path,
       '-dynamiclib',
-      '-fembed-bitcode-marker',
+      // '-fembed-bitcode-marker',
       // Keep version in sync with AOTSnapshotter flag
       if (environmentType == EnvironmentType.physical)
         '-miphoneos-version-min=9.0'
