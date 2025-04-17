@@ -20,7 +20,7 @@ const String kgCloudHttpHost = 'https://cloud.google.com/';
 
 /// Android specific required HTTP hosts.
 const List<String> androidRequiredHttpHosts = <String>[
-  'https://maven.google.com/',
+  'https://dl.google.com/dl/android/maven2/',
 ];
 
 /// MacOS specific required HTTP hosts.
