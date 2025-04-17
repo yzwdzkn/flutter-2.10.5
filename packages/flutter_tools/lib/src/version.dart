@@ -14,7 +14,7 @@ import 'cache.dart';
 import 'convert.dart';
 import 'globals.dart' as globals;
 
-const String _unknownFrameworkVersion = '0.0.0-unknown';
+const String _unknownFrameworkVersion = '2.10.5';
 
 /// The names of each channel/branch in order of increasing stability.
 enum Channel {
