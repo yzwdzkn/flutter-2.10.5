@@ -5,6 +5,7 @@
 import '../../src/base/process.dart';
 import '../../src/convert.dart' show json;
 import '../../src/macos/xcode.dart';
+import '../base/version.dart';
 import '../convert.dart';
 
 /// The generator of xcresults.
@@ -40,11 +41,13 @@ class XCResultGenerator {
   Future<XCResult> generate(
       {List<XCResultIssueDiscarder> issueDiscarders =
           const <XCResultIssueDiscarder>[]}) async {
+    final Version? xcodeVersion = xcode.currentVersion;
     final RunResult result = await processUtils.run(
       <String>[
         ...xcode.xcrunCommand(),
         'xcresulttool',
         'get',
+        if (xcodeVersion != null && xcodeVersion >= Version(16, 0, 0)) '--legacy',
         '--path',
         resultPath,
         '--format',
